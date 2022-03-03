@@ -23,6 +23,22 @@ describe('Componente App', () => {
         })
     })
     describe('Quando eu realizo uma transação', () => {
+        it('a transação deve ser realizada no saque', () => {
+            render(<App />);
+
+            const saldo = screen.getByText('R$ 1000');
+            const transacao = screen.getByLabelText('Saque');
+            const valor = screen.getByTestId('valor');
+            const botao = screen.getByText('Realizar operação');
+
+            expect(saldo.textContent).toBe('R$ 1000');
+
+            fireEvent.click(transacao, { target: { value: 'saque' }});
+            fireEvent.change(valor, { target: { value: 10 }});
+            fireEvent.click(botao);
+
+            expect(saldo.textContent).toBe('R$ 990');
+        })
 
         it('diminui o saldo ao fazer um saque', () => {
             const valores = {
