@@ -64,3 +64,4 @@ describe('Componente App', () => {
             expect(novoSaldo).toBe(100)
         })
 })
+})
