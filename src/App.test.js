@@ -43,7 +43,7 @@ describe('Componente App', () => {
             render(<App />);
 
             const saldo = screen.getByText('R$ 1000');
-            const transacao = screen.getByLabelText('Saque');
+            const transacao = screen.getByLabelText('Depósito');
             const valor = screen.getByTestId('valor');
             const botao = screen.getByText('Realizar operação');
 
