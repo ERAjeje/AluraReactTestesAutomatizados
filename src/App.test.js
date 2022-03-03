@@ -63,5 +63,5 @@ describe('Componente App', () => {
             const novoSaldo = calcularNovoSaldo(valores, 150)
             expect(novoSaldo).toBe(100)
         })
-})
+    })
 })
