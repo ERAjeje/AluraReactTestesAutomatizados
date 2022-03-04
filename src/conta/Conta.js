@@ -60,7 +60,7 @@ const Conta = ({ saldo, realizarTransacao }) => {
             ></input>
 
             <div>
-                <button type='submit'>
+                <button type='submit' disabled={(valores.valor === 0 || valores.transacao === '') ? true : false}>
                     Realizar operação
                 </button>
             </div>
